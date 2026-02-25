@@ -1,3 +1,5 @@
+import { NavLink } from "react-router-dom";
+
 export default function Aside() {
   return (
     <aside className="main-sidebar sidebar-dark-primary elevation-4">
@@ -55,63 +57,79 @@ export default function Aside() {
             role="menu"
             data-accordion="false"
           >
-            <li className="nav-item">
-              <a href="#" className="nav-link active">
-                <i className="nav-icon fas fa-tachometer-alt" />
-                <p>Dashboard</p>
-              </a>
-            </li>
             
+            <li className="nav-item">
+              <a href="/horarios" className="nav-link">
+                <i className=" nav-icon fas fa-clock " />
+                <p>Actividades</p>
+              </a>
+              <ul className="nav nav-treeview">
+                <li className="nav-item">
+                  <NavLink to="/listado-actividades" className="nav-link">
+                    <i className="far fa-circle nav-icon" />
+                    <p>Listado Actividades</p>
+                  </NavLink>
+                </li>
+              </ul>
+            </li>
+
+            <li className="nav-item">
+              <a href="/profesores" className="nav-link">
+                <i className="nav-icon fas fa-chalkboard-teacher" />
+                <p>Profesores</p>
+              </a>
+              <ul className="nav nav-treeview">
+                <li className="nav-item">
+                  <NavLink to="/listado-profesores" className="nav-link">
+                    <i className="far fa-cicle nav-icon" />
+                    <p>Listado Profesores</p>
+                  </NavLink>
+                </li>
+              </ul>
+            </li>
+
             <li className="nav-item">
               <a href="#" className="nav-link">
                 <i className="nav-icon fas fa-users" />
                 <p>Alumnos</p>
               </a>
+              <ul className="nav nav-treeview">
+                <li className="nav-item">
+                  <NavLink to="/listado-alumnos" className="nav-link">
+                    <i className="far fa-circle nav-icon" />
+                    <p>Listado Alumnos</p>
+                  </NavLink>
+
+                </li>
+
+              </ul>
             </li>
             
-            <li className="nav-item">
-              <a href="#" className="nav-link">
-                <i className="nav-icon fas fa-chalkboard-teacher" />
-                <p>Profesores</p>
-              </a>
-            </li>
-            
-            <li className="nav-item">
-              <a href="#" className="nav-link">
-                <i className="nav-icon fas fa-music" />
-                <p>Clases</p>
-              </a>
-            </li>
-            
-            <li className="nav-item">
-              <a href="#" className="nav-link">
-                <i className="nav-icon fas fa-calendar-alt" />
-                <p>Horarios</p>
-              </a>
-            </li>
-            
-            <li className="nav-item">
-              <a href="#" className="nav-link">
+             <li className="nav-item">
+              <a href="/pagos" className="nav-link">
                 <i className="nav-icon fas fa-dollar-sign" />
                 <p>Pagos</p>
               </a>
             </li>
             
-            <li className="nav-header">CONFIGURACIÓN</li>
             
             <li className="nav-item">
-              <a href="#" className="nav-link">
-                <i className="nav-icon fas fa-cog" />
-                <p>Configuración</p>
+              <a href="/clases" className="nav-link">
+                <i className="nav-icon fas fa-music" />
+                <p>Clases</p>
               </a>
             </li>
             
+            
+
             <li className="nav-item">
-              <a href="#" className="nav-link">
-                <i className="nav-icon fas fa-chart-bar" />
-                <p>Reportes</p>
+              <a href="/presentes" className="nav-link">
+                <i className="nav-icon fas fa-dollar-sign" />
+                <p>Presentes </p>
               </a>
             </li>
+            
+            
           </ul>
         </nav>
       </div>

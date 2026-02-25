@@ -1,5 +1,15 @@
 import { Route, Routes } from "react-router-dom";
-import Dashboard from "../pages/Dashboard";
+import Profesores from "../pages/Profesores";
+import Pagos from "../pages/Pagos";
+import PageListadoAlumnos from "../pages/Alumnos/Pagelistadoalumnos";
+import CrearAlumnos from "../pages/Alumnos/CrearAlumnos";
+import PageListadoActividades from "../pages/actividades/Pagelistadoactividades";
+import PageListadoProfesores from "../pages/profesores/PageListadoProfesores";
+import CrearProfesores from "../pages/profesores/CrearProfesores";
+import CrearActividades from "../pages/actividades/CrearActividades";
+import { ListadoClases } from "../pages/clases/clases";
+import PageListadoClases from "../pages/clases/PageClases";
+import CrearClases from "../pages/clases/CrearClases";
 
 export default function Content() {
   return (
@@ -9,12 +19,13 @@ export default function Content() {
         <div className="container-fluid">
           <div className="row mb-2">
             <div className="col-sm-6">
-              <h1 className="m-0">Sistema KB Danza</h1>
+              <h1 className="m-0">Sistema KickBoxing Danza</h1>
             </div>
             <div className="col-sm-6">
               <ol className="breadcrumb float-sm-right">
-                <li className="breadcrumb-item"><a href="#">Home</a></li>
-                
+                <li className="breadcrumb-item">
+                  <a href="#">Home</a>
+                </li>
               </ol>
             </div>
           </div>
@@ -27,16 +38,32 @@ export default function Content() {
         <div className="container-fluid">
           <div className="row">
             <div className="col-lg-12">
-                   <Routes>
-                        <Route path="/" element={<Dashboard />} />
-                   </Routes>
-                    
-                    
-                  </div>
-                </div>
-              </div>
+              <Routes>
+                <Route
+                  path="/listado-alumnos"
+                  element={<PageListadoAlumnos />}
+                />
+                <Route path="/profesores" element={<Profesores />} />
+                <Route path="/clases" element={<PageListadoClases/>} />
+                <Route
+                  path="/listado-actividades"
+                  element={<PageListadoActividades />}
+                />
+                <Route path="/pagos" element={<Pagos />} />
+                <Route path="/crearalumnos" element={<CrearAlumnos />} />
+                <Route path="/crearActividades" element={<CrearActividades/>}/>
+                <Route
+                  path="/listado-profesores"
+                  element={<PageListadoProfesores />}
+                />
+                <Route path="/crear-profesores" element={<CrearProfesores />} />
+                <Route path="/crearclases" element={<CrearClases/>} />
+              </Routes>
             </div>
-            {/* /.content */}
+          </div>
         </div>
+      </div>
+      {/* /.content */}
+    </div>
   );
 }

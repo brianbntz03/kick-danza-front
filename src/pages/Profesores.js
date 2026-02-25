@@ -1,13 +1,13 @@
 import React from 'react';
 
 
-const Dashboard = () => {
+const Profesores = () => {
   return (
     <div className="card">
       <div className="card-header border-0">
-        <h1 className="card-title">Categorias</h1>
+        <h1 className="card-title">Profesores</h1>
         <div className="card-tools">
-          <a class="btn btn-sm btn-info float-right" href='/crearcategorias' > Dashboard</a>
+          <a class="btn btn-sm btn-info float-right" href='/crearcategorias' > Profesores</a>
           <a href="#" className="btn btn-tool btn-sm">
             <i className="fas fa-download" />
           </a>
@@ -22,4 +22,4 @@ const Dashboard = () => {
   )
 }
 
-export default Dashboard
+export default Profesores
