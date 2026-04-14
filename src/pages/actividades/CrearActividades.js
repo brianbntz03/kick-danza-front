@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import { api } from "../../service/apiRest";
+import { api, publicUrl } from "../../service/apiRest";
+import Swal from "sweetalert2";
 
 export default function CrearActividades() {
   const [nombre, setNombre] = useState("");
@@ -9,11 +10,23 @@ export default function CrearActividades() {
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState(false);
 
+  const MostrarAlerta = () => {
+      Swal.fire({
+        title: "Creación de actividad",
+        text: "La actividad fue creada correctamente.",
+        icon: "success",
+        timer: 2000,
+      }).then(() => {
+        window.location.href = `${publicUrl}/listado-actividades`;
+      });
+    };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
     setError(null);
     setSuccess(false);
+    MostrarAlerta();
     
     try {
       await api.post('/actividades', {

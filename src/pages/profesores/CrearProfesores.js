@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { api } from '../../service/apiRest';
+import { api, publicUrl } from '../../service/apiRest';
+import Swal from 'sweetalert2';
 
 export default function CrearProfesores() {
     const [nombre, setNombre] = useState("");
@@ -10,11 +11,23 @@ export default function CrearProfesores() {
     const [loading, setLoading] = useState(false);
     const [success, setSuccess] = useState(false);
 
+    const MostrarAlerta = () => {
+        Swal.fire({
+          title: "Creación de profesor",
+          text: "El profesor fue creado correctamente.",
+          icon: "success",
+          timer: 2000,
+        }).then(() => {
+          window.location.href = `${publicUrl}/listado-profesores`;
+        });
+      };
+
     const handleSubmit = async (e) => {
         e.preventDefault();
         setLoading(true);
         setError(null);
         setSuccess(false);
+        MostrarAlerta();
 
         try {
             // ENVIAR DATOS: Pasamos un objeto con nombre y descripcion
@@ -34,6 +47,10 @@ export default function CrearProfesores() {
             setLoading(false);
         }
     };
+
+     
+
+
 
     return (
         <div className="card card-primary">

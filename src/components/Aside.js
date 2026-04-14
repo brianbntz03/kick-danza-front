@@ -13,7 +13,7 @@ export default function Aside() {
         />
         <span className="brand-text font-weight-light">KB Danza</span>
       </a>
-      
+
       {/* Sidebar */}
       <div className="sidebar">
         {/* Sidebar user panel */}
@@ -57,11 +57,10 @@ export default function Aside() {
             role="menu"
             data-accordion="false"
           >
-            
             <li className="nav-item">
               <a href="/horarios" className="nav-link">
                 <i className=" nav-icon fas fa-clock " />
-                <p>Actividades</p>
+                <p>Actividades <i className="right fas fa-angle-left" /></p>
               </a>
               <ul className="nav nav-treeview">
                 <li className="nav-item">
@@ -76,7 +75,7 @@ export default function Aside() {
             <li className="nav-item">
               <a href="/profesores" className="nav-link">
                 <i className="nav-icon fas fa-chalkboard-teacher" />
-                <p>Profesores</p>
+                <p>Profesores <i className="right fas fa-angle-left" /></p>
               </a>
               <ul className="nav nav-treeview">
                 <li className="nav-item">
@@ -91,7 +90,7 @@ export default function Aside() {
             <li className="nav-item">
               <a href="#" className="nav-link">
                 <i className="nav-icon fas fa-users" />
-                <p>Alumnos</p>
+                <p>Alumnos <i className="right fas fa-angle-left" /></p>
               </a>
               <ul className="nav nav-treeview">
                 <li className="nav-item">
@@ -99,37 +98,42 @@ export default function Aside() {
                     <i className="far fa-circle nav-icon" />
                     <p>Listado Alumnos</p>
                   </NavLink>
-
                 </li>
-
               </ul>
             </li>
-            
-             <li className="nav-item">
-              <a href="/pagos" className="nav-link">
+
+            <li className="nav-item has-treeview">
+              <a href="#" className="nav-link">
                 <i className="nav-icon fas fa-dollar-sign" />
-                <p>Pagos</p>
+                <p>
+                  Pagos
+                  <i className="right fas fa-angle-left" />
+                </p>
               </a>
+
+              <ul className="nav nav-treeview">
+                <li className="nav-item">
+                  <NavLink to="/pagos" className="nav-link">
+                    <i className="far fa-circle nav-icon" />
+                    <p>Pagar Clase / Tomar Presentes</p>
+                  </NavLink>
+                </li>
+
+                <li className="nav-item">
+                  <NavLink to="/listado-pagos" className="nav-link">
+                    <i className="far fa-circle nav-icon" />
+                    <p>Listado de Pagos</p>
+                  </NavLink>
+                </li>
+              </ul>
             </li>
-            
-            
+
             <li className="nav-item">
               <a href="/clases" className="nav-link">
                 <i className="nav-icon fas fa-music" />
                 <p>Clases</p>
               </a>
             </li>
-            
-            
-
-            <li className="nav-item">
-              <a href="/presentes" className="nav-link">
-                <i className="nav-icon fas fa-dollar-sign" />
-                <p>Presentes </p>
-              </a>
-            </li>
-            
-            
           </ul>
         </nav>
       </div>

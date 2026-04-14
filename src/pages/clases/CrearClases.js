@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
-import { api } from "../../service/apiRest";
+import { api, publicUrl } from "../../service/apiRest";
+import Swal from "sweetalert2";
 
 export default function CrearClase() {
   const [formData, setFormData] = useState({
     nombre: "",
-    descripcion: "",
     profesorId: "",
     actividadId: "",
   });
@@ -13,14 +13,31 @@ export default function CrearClase() {
   const [actividades, setActividades] = useState([]);
   const [loading, setLoading] = useState(false);
   const [status, setStatus] = useState({ type: "", msg: "" });
+  const [error, setError] = useState(null);
+  const [success, setSuccess] = useState(false);
 
   useEffect(() => {
     api.get("/profesores").then((res) => setProfesores(res.data));
     api.get("/actividades").then((res) => setActividades(res.data));
   }, []);
 
+  const MostrarAlerta = () => {
+      Swal.fire({
+        title: "Creación de Clases",
+        text: "El nombre de la clase fue creado correctamente.",
+        icon: "success",
+        timer: 2000,
+      }).then(() => {
+        window.location.href = `${publicUrl}/clases`;
+      });
+    };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
+    MostrarAlerta();
+    setError(null);
+    setSuccess(false);
+    setLoading(true);
 
     if (!formData.profesorId || !formData.actividadId) {
       setStatus({
@@ -35,7 +52,6 @@ export default function CrearClase() {
     try {
       await api.post("/nombre-clase", {
         nombre: formData.nombre,
-        descripcion: formData.descripcion,
         profesorId: parseInt(formData.profesorId),
         actividad: parseInt(formData.actividadId),
       });
@@ -61,8 +77,9 @@ export default function CrearClase() {
         <h3 className="card-title">Nueva Clase (White Tiger)</h3>
       </div>
       <form onSubmit={handleSubmit} className="p-3">
-        {status.msg && (
-          <div className={`alert alert-${status.type}`}>{status.msg}</div>
+        {error && <div className="alert alert-danger">{error}</div>}
+        {success && (
+          <div className="alert alert-success">Nombre de la clase creado exitosamente</div>
         )}
 
         <div className="row">
@@ -116,17 +133,6 @@ export default function CrearClase() {
               ))}
             </select>
           </div>
-        </div>
-
-        <div className="form-group">
-          <label>Descripción</label>
-          <textarea
-            className="form-control"
-            value={formData.descripcion}
-            onChange={(e) =>
-              setFormData({ ...formData, descripcion: e.target.value })
-            }
-          />
         </div>
 
         <button type="submit" className="btn btn-primary" disabled={loading}>

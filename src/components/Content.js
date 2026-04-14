@@ -1,6 +1,5 @@
 import { Route, Routes } from "react-router-dom";
 import Profesores from "../pages/Profesores";
-import Pagos from "../pages/Pagos";
 import PageListadoAlumnos from "../pages/Alumnos/Pagelistadoalumnos";
 import CrearAlumnos from "../pages/Alumnos/CrearAlumnos";
 import PageListadoActividades from "../pages/actividades/Pagelistadoactividades";
@@ -10,6 +9,8 @@ import CrearActividades from "../pages/actividades/CrearActividades";
 import { ListadoClases } from "../pages/clases/clases";
 import PageListadoClases from "../pages/clases/PageClases";
 import CrearClases from "../pages/clases/CrearClases";
+import PageListadoPagos from "../pages/pagos/PageListadoPagos";
+import Pagos from "../pages/pagos/PageGenerarPagos";
 
 export default function Content() {
   return (
@@ -58,6 +59,7 @@ export default function Content() {
                 />
                 <Route path="/crear-profesores" element={<CrearProfesores />} />
                 <Route path="/crearclases" element={<CrearClases/>} />
+                <Route path="/listado-pagos" element={<PageListadoPagos />} />
               </Routes>
             </div>
           </div>

@@ -78,7 +78,6 @@ export function ListadoProfesores() {
               <th>Nombre</th>
               <th>telefono</th>
               <th>email</th>
-              <th>dni</th>
               <th>Acciones</th>
             </tr>
           </thead>
@@ -89,7 +88,6 @@ export function ListadoProfesores() {
                 <td>{profe.nombre}</td>
                 <td>{profe.telefono}</td>
                 <td>{profe.email}</td>
-                <td>{profe.dni}</td>
                 <td>
                   <button className="btn btn-sm btn-primary mr-2" onClick={() => handleEditClick(profe)}>
                     Editar
@@ -139,15 +137,6 @@ export function ListadoProfesores() {
                     className="form-control"
                     value={profesorEditando.email}
                     onChange={(e) => setProfesorEditando({ ...profesorEditando, email: e.target.value })}
-                  />
-                </div>
-                <div className="form-group">
-                  <label>dni</label>
-                  <input
-                    type="text"
-                    className="form-control"
-                    value={profesorEditando.dni}
-                    onChange={(e) => setProfesorEditando({ ...profesorEditando, dni: e.target.value })}
                   />
                 </div>
               </div>

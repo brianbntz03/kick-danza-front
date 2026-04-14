@@ -15,8 +15,6 @@ export function ListadoClases() {
     descripcion: "",
     profesorId: "",
     actividad: "",
-    nivel: "",
-    duracion: "",
   });
 
   const fetchData = async () => {
@@ -109,8 +107,6 @@ export function ListadoClases() {
               <th>Clase</th>
               <th>Actividad</th>
               <th>Profesor</th>
-              <th>descripcion</th>
-              <th>Acciones</th>
             </tr>
           </thead>
           <tbody>
@@ -122,9 +118,6 @@ export function ListadoClases() {
                 </td>
                 <td>{clase.actividad?.deporte}</td>
                 <td>{clase.profesor?.nombre || "Sin profesor"}</td>
-                <td>
-                  <span className="badge badge-info">{clase.descripcion}</span>
-                </td>
                 <td>
                   <button
                     className="btn btn-sm btn-primary mr-2"
