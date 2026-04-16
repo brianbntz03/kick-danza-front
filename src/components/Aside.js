@@ -4,7 +4,7 @@ export default function Aside() {
   return (
     <aside className="main-sidebar sidebar-dark-primary elevation-4">
       {/* Brand Logo */}
-      <a href="#" className="brand-link">
+      <a href="/" className="brand-link">
         <img
           src="dist/img/AdminLTELogo.png"
           alt="KB Danza Logo"
@@ -26,7 +26,7 @@ export default function Aside() {
             />
           </div>
           <div className="info">
-            <a href="#" className="d-block">
+            <a href="/" className="d-block">
               Sistema KB Danza
             </a>
           </div>
@@ -60,7 +60,9 @@ export default function Aside() {
             <li className="nav-item">
               <a href="/horarios" className="nav-link">
                 <i className=" nav-icon fas fa-clock " />
-                <p>Actividades <i className="right fas fa-angle-left" /></p>
+                <p>
+                  Actividades <i className="right fas fa-angle-left" />
+                </p>
               </a>
               <ul className="nav nav-treeview">
                 <li className="nav-item">
@@ -75,12 +77,14 @@ export default function Aside() {
             <li className="nav-item">
               <a href="/profesores" className="nav-link">
                 <i className="nav-icon fas fa-chalkboard-teacher" />
-                <p>Profesores <i className="right fas fa-angle-left" /></p>
+                <p>
+                  Profesores <i className="right fas fa-angle-left" />
+                </p>
               </a>
               <ul className="nav nav-treeview">
                 <li className="nav-item">
                   <NavLink to="/listado-profesores" className="nav-link">
-                    <i className="far fa-cicle nav-icon" />
+                    <i className="far fa-circle nav-icon" />{" "}
                     <p>Listado Profesores</p>
                   </NavLink>
                 </li>
@@ -88,9 +92,11 @@ export default function Aside() {
             </li>
 
             <li className="nav-item">
-              <a href="#" className="nav-link">
+              <a href="/" className="nav-link">
                 <i className="nav-icon fas fa-users" />
-                <p>Alumnos <i className="right fas fa-angle-left" /></p>
+                <p>
+                  Alumnos <i className="right fas fa-angle-left" />
+                </p>
               </a>
               <ul className="nav nav-treeview">
                 <li className="nav-item">
@@ -103,7 +109,7 @@ export default function Aside() {
             </li>
 
             <li className="nav-item has-treeview">
-              <a href="#" className="nav-link">
+              <a href="/" className="nav-link">
                 <i className="nav-icon fas fa-dollar-sign" />
                 <p>
                   Pagos
