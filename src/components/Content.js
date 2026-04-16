@@ -6,7 +6,6 @@ import PageListadoActividades from "../pages/actividades/Pagelistadoactividades"
 import PageListadoProfesores from "../pages/profesores/PageListadoProfesores";
 import CrearProfesores from "../pages/profesores/CrearProfesores";
 import CrearActividades from "../pages/actividades/CrearActividades";
-import { ListadoClases } from "../pages/clases/clases";
 import PageListadoClases from "../pages/clases/PageClases";
 import CrearClases from "../pages/clases/CrearClases";
 import PageListadoPagos from "../pages/pagos/PageListadoPagos";
@@ -25,7 +24,7 @@ export default function Content() {
             <div className="col-sm-6">
               <ol className="breadcrumb float-sm-right">
                 <li className="breadcrumb-item">
-                  <a href="#">Home</a>
+                  <a href="/">Home</a>
                 </li>
               </ol>
             </div>

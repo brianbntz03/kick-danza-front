@@ -22,7 +22,7 @@ export default function Aside() {
             <img
               src="dist/img/user2-160x160.jpg"
               className="img-circle elevation-2"
-              alt="User Image"
+              alt="usuario"
             />
           </div>
           <div className="info">
