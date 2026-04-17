@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/brianbntz03/kick-danza-front/static/css/main.814b8063.css",
+    "main.js": "/brianbntz03/kick-danza-front/static/js/main.27b60b2f.js",
+    "static/js/453.0371d8dc.chunk.js": "/brianbntz03/kick-danza-front/static/js/453.0371d8dc.chunk.js",
+    "index.html": "/brianbntz03/kick-danza-front/index.html",
+    "main.814b8063.css.map": "/brianbntz03/kick-danza-front/static/css/main.814b8063.css.map",
+    "main.27b60b2f.js.map": "/brianbntz03/kick-danza-front/static/js/main.27b60b2f.js.map",
+    "453.0371d8dc.chunk.js.map": "/brianbntz03/kick-danza-front/static/js/453.0371d8dc.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.814b8063.css",
+    "static/js/main.27b60b2f.js"
+  ]
+}
